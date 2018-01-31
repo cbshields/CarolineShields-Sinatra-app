@@ -9,7 +9,10 @@ class CoursesController < ApplicationController
     end
   end
 
-
+  get '/courses/:slug' do
+    @course = Course.find_by_slug(params[:slug])
+    erb :'/courses/show'
+  end
 
 
 end #Ends CoursesController
