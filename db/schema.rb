@@ -14,9 +14,8 @@ ActiveRecord::Schema.define(version: 20180130182643) do
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
-    t.time "time"
+    t.string "time"
     t.integer "duration"
-    t.string "room"
     t.integer "teacher_id"
   end
 

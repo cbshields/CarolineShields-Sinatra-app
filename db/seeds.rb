@@ -3,8 +3,8 @@ mom = Teacher.create(username: "mom", email: "ham@co.com", password: "password",
 hank = Teacher.create(username: "hank", email: "prettyboy@gmail.com", password: "password", name: "Hank Shields")
 rob = Teacher.create(username: "rob", email: "pry4@yahoo.com", password: "password", name: "Rob Shields")
 
-Course.create(title: "How to get an SO in 2 days", time: "08:00a", duration: 1, room: "South Rim", teacher: caroline )
-Course.create(title: "How to get rid of an SO in 10 days", time: "11:00a", duration: 1.5, room: "Grand Canyon", teacher: rob )
-Course.create(title: "Glamour Shots Tutorial", time: "01:00p", duration: 1, room: "Las Vegas", teacher: mom )
-Course.create(title: "Own Your Own Bar From the Ground Up", time: "03:00p", duration: 2, room: "Utah", teacher: hank )
-Course.create(title: "Personal Financial Investment", time: "02:00p", duration: 2.5, room: "Colorado", teacher: hank )
+Course.create(title: "How to get an SO in 2 days", time: "08:00a", duration: 1, teacher: caroline )
+Course.create(title: "How to get rid of an SO in 10 days", time: "11:00a", duration: 1.5, teacher: rob )
+Course.create(title: "Glamour Shots Tutorial", time: "01:00p", duration: 1, teacher: mom )
+Course.create(title: "Own Your Own Bar From the Ground Up", time: "03:00p", duration: 2, teacher: hank )
+Course.create(title: "Personal Financial Investment", time: "02:00p", duration: 2.5, teacher: hank )

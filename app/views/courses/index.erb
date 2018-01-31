@@ -2,6 +2,8 @@
 <h2>Current Courses</h2>
 
 <% @courses.each do |course| %>
-  <li> <a href="/courses/<%=course.slug%>"><%=course.title%></a> - <%=course.teacher.name%> - <%=course.time%> - <%=course.room%></li>
+  <li> <a href="/courses/<%=course.slug%>"><%=course.title%> - <%=course.teacher.name%> - <%=course.time%> - <%=course.duration%> hr</a></li>
 
 <%end%>
+<br></br>
+<a href="/courses/new">Create Course</a>
