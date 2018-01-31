@@ -10,5 +10,5 @@ logged in as: <%=current_user.username%>
   <input type="submit" value="Delete Course">
 </form>
 
-<a href="/courses/<%@course.slug%>/edit">Edit Course </a>
+<a href="/courses/<%=@course.slug%>/edit"> Edit Course </a>
 <% end %>

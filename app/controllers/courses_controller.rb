@@ -35,16 +35,36 @@ class CoursesController < ApplicationController
     end
   end
 
-  delete '/courses/:slug/delete' do
+  get '/courses/:slug/edit' do
     if logged_in?
-      @course = Course.find_by_slug([:slug])
-      @course.delete
-      redirect '/courses'
+      @course = Course.find_by_slug(params[:slug])
+      binding.pry
+      erb :'/courses/edit'
     else
       redirect '/login'
     end
+  end
 
+  patch '/courses/:slug' do
+    @course = Course.find_by_slug(params[:slug])
+    binding.pry
+    @course.update(params[:course])
+    @course.save
+    redirect "/courses/#{@course.slug}"
+  end
 
+  delete '/courses/:slug/delete' do
+    if logged_in?
+      @course = Course.find_by_slug([:slug])
+      if @course.teacher_id == current_user.id
+        @course.delete
+        redirect '/courses'
+      else
+        redirect '/courses'
+      end
+    else
+      redirect '/login'
+    end
   end
 
 
