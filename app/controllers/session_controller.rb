@@ -19,4 +19,13 @@ class SessionController < ApplicationController
     end
   end
 
+  get 'logout' do
+    if logged_in?
+      session.destroy
+      redirect '/login'
+    else
+      redirect '/courses'
+    end
+  end
+
 end #Ends SessionController
