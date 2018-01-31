@@ -5,5 +5,7 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 use Rack::MethodOverride
-
+use SessionController
+use CoursesController
+use TeachersController
 run ApplicationController

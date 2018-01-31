@@ -12,11 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20180130182643) do
 
-  create_table "classes", force: :cascade do |t|
-    t.string "name"
+  create_table "courses", force: :cascade do |t|
+    t.string "title"
     t.time "time"
     t.integer "duration"
     t.string "room"
+    t.integer "teacher_id"
   end
 
   create_table "teachers", force: :cascade do |t|

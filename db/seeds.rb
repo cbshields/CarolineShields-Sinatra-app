@@ -1,0 +1,10 @@
+caroline = Teacher.create(username: "CShields", email: "ha@co.com", password: "password", name: "Caroline Shields")
+mom = Teacher.create(username: "mom", email: "ham@co.com", password: "password", name: "Mom Shields")
+hank = Teacher.create(username: "hank", email: "prettyboy@gmail.com", password: "password", name: "Hank Shields")
+rob = Teacher.create(username: "rob", email: "pry4@yahoo.com", password: "password", name: "Rob Shields")
+
+Course.create(title: "How to get an SO in 2 days", time: "08:00", duration: 1, room: "South Rim", teacher: caroline )
+Course.create(title: "How to get rid of an SO in 10 days", time: "11:00", duration: 1.5, room: "Grand Canyon", teacher: rob )
+Course.create(title: "Glamour Shots Tutorial", time: "01:00", duration: 1, room: "Las Vegas", teacher: mom )
+Course.create(title: "Own Your Own Bar From the Ground Up", time: "03:00", duration: 2, room: "Utah", teacher: hank )
+Course.create(title: "Personal Financial Investment", time: "02:00", duration: 2.5, room: "Colorado", teacher: hank )

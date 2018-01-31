@@ -1,12 +1,22 @@
 class SessionController < ApplicationController
 
   get '/login' do
-    erb :login
+    if logged_in?
+      redirect '/courses'
+    else
+      erb :'/sessions/login'
+    end
+
   end
 
   post '/login' do
-    user = Teacher.find_by(username: params[:username] )
-    pry
+    teacher = Teacher.find_by(username: params[:username] )
+    if teacher && teacher.authenticate(params[:password])
+      session[:user_id] = teacher.id
+      redirect '/courses'
+    else
+      redirect '/login'
+    end
   end
 
-end
+end #Ends SessionController
