@@ -1,0 +1,6 @@
+<h2>Instructor List</h2>
+
+<% @teachers.each do |teacher| %>
+  <li><a href="/teachers/<%=teacher.slug%>"><%=teacher.name%></a></li>
+
+<% end %>

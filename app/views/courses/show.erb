@@ -1,7 +1,6 @@
-logged in as: <%=current_user.username%>
 <h2><%=@course.title%></h2>
 
-<p>Instructor: <%=@course.teacher.name%></p>
+<p>Instructor: <a href="/teachers/<%=@course.teacher.slug%>"><%=@course.teacher.name%></a></p>
 <p>Time: <%=@course.time%>, <%=@course.duration%> hr</p>
 
 <% if current_user.id == @course.teacher_id %>

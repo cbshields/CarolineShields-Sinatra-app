@@ -1,0 +1,6 @@
+<h2><%=@teacher.name%> Profile</h2>
+
+<h3>Currently Teaching These Courses:</h3>
+<%@teacher.courses.each do |course| %>
+  <li><a href="/courses/<%=course.slug%>"><%=course.title%></a></li>
+<%end%>

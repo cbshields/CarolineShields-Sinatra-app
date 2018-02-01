@@ -9,12 +9,13 @@ class SessionController < ApplicationController
   end
 
   post '/signup' do
-    binding.pry
-    if params[:username] == "" || params[:password] == "" || params[:email] == "" || params[:name] == ""
-      redirect to '/signup'
+    teacher = Teacher.find_by(username: params[:teacher][:username])
+    if teacher
+      erb :'/sessions/signup', locals: {message: "Please create a different username"}
+    elsif params[:username] == "" || params[:password] == "" || params[:email] == "" || params[:name] == ""
+        erb :'/sessions/signup', locals: {message: "Please sign up before you log in"}
     else
       @teacher = Teacher.create(params[:teacher])
-      binding.pry
       session[:user_id] = @teacher.id
       redirect to '/courses'
     end
@@ -31,9 +32,9 @@ class SessionController < ApplicationController
 
   post '/login' do
     teacher = Teacher.find_by(username: params[:username] )
-    binding.pry
+
     if teacher && teacher.authenticate(params[:password])
-      binding.pry
+
       session[:user_id] = teacher.id
       redirect '/courses'
     else

@@ -1,9 +1,14 @@
 <h1>LifeSkills R Us</h1>
+
+<% unless locals.empty? %>
+  <%= message %>
+<% end %>
+
 <h2>Create an Account:</h2>
 <form action="/signup" method="post">
   Name: <input type="text" name="teacher[name]">
   <br></br>
-  User name: <input type="text" name="teacher[username]">
+  Username: <input type="text" name="teacher[username]">
     <br></br>
   Email: <input type="text" name="teacher[email]">
     <br></br>
