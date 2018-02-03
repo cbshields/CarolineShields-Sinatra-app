@@ -11,7 +11,7 @@ class SessionController < ApplicationController
   post '/signup' do
     teacher = Teacher.find_by(username: params[:teacher][:username])
     if teacher
-      erb :'/sessions/signup', locals: {message: "Please create a different username"}
+      erb :'/sessions/signup', locals: {message: "That username already exists, Please create a different username"}
     elsif params[:username] == "" || params[:password] == "" || params[:email] == "" || params[:name] == ""
         erb :'/sessions/signup', locals: {message: "Please sign up before you log in"}
     else

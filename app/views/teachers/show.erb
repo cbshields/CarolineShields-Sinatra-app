@@ -4,3 +4,12 @@
 <%@teacher.courses.each do |course| %>
   <li><a href="/courses/<%=course.slug%>"><%=course.title%></a></li>
 <%end%>
+
+<% if @teacher.id == current_user.id %>
+<form method="post" action="/teachers/<%=@teacher.slug%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Remove Instructor">
+</form>
+
+<a href="/teachers/<%=@teacher.slug%>/edit"> Edit Instructor </a>
+<% end %>

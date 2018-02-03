@@ -1,0 +1,9 @@
+<h2>Edit Instructor</h2>
+<form action="/teachers/<%=@teacher.slug%>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  Name: <input type="text" name="teacher[name]" value="<%=@teacher.name%>">
+  Username: <input type="text" name="teacher[username]" value="<%=@teacher.username%>">
+
+  <br></br>
+  <input type="submit" name="submit" value="Update Instructor">
+</form>
